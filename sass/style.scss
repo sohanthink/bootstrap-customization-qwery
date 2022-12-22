@@ -1,0 +1,94 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$light: red;
+$navbar-light-color: white;
+$navbar-light-hover-color : #010192b7;
+$navbar-light-active-color : #010192b7;
+$input-bg: transparent;
+$input-border-color: #FFA343;
+$input-placeholder-color : white;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+
+// 4. Include any default map overrides here
+
+$custom-position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%,
+  20 : 20%,
+  16 : 16%,
+  28 : 28%,
+  10 : 10%,
+);
+$position-values: map-merge($position-values, $custom-position-values);
+
+$custom-colors: (
+  "common-color": #FFA343,
+  "mern": rgb(212, 27, 188),
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$custom-font-sizes: (
+  "title-font" : 18px,
+  "heading" : 96px,
+  "banner-small-heading" : 88px,
+  "section_heading" : 64px,
+  "paragraph": 14px,
+  "explore" : 22px,
+  "button-size" : 17px,
+  "footer-heading" : 36px,
+  "footer-size" : 19px
+);
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+
+$custom-spacers: (
+  "section-padding" : 140px,
+  "holiday-padding" : 55px,
+  "climb-padding" : 262px,
+);
+$spacers: map-merge($spacers, $custom-spacers);
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/nav";
+@import "../node_modules/bootstrap/scss/navbar";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+a{
+  color: inherit;
+}
+.font{
+  font-family: 'Open Sans', sans-serif;
+}
+.paragraph-line-height{
+  line-height: 32px;
+}
+.spacing{
+  letter-spacing: 6px;
+}
+.list{
+  list-style: none;
+}
